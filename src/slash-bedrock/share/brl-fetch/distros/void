@@ -16,6 +16,8 @@ check_supported() {
 	case "$(uname -m)" in
 	"x86_64") true ;;
 	"armv7l") true ;;
+	"aarch64") true ;;
+
 	*) false ;;
 	esac
 }
@@ -28,6 +30,7 @@ distro_arch_name() {
 	case "$(uname -m)" in
 	"x86_64") echo "x86_64" ;;
 	"armv7l") echo "armv7l" ;;
+	"aarch64") echo "armv7l" ;;
 	*) fetch_abort "brl-fetch does not support distro/architecture pair" ;;
 	esac
 }
